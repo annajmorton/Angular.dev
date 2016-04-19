@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+
+<html ng-app="templateTest">
+
+	<head>
+	
+		<title></title>
+		
+		<meta charset="utf8">
+		<style type="text/css">
+			 li:first-child {
+			     font-style: italic;
+			     color: blue;
+			 }
+			 li:last-child {
+			     font-weight: bold;
+			     color: red;
+			 }
+			 img {
+			    width: 100%;
+			    height: auto;
+			}
+		
+		</style>
+
+	</head>
+
+
+
+	<body>
+
+		<h1>Junk</h1>
+		<br>
+		<h2>{{ "does this work?" }}</h2>
+		<ul>
+			<li ng-repeat="num in [0,1,2,3,4,5,6,7,8,9]" ng-if="num %3 == 0">{{ num }}</li>
+		</ul>
+
+		<ul>
+			<li ng-repeat="num in [0,1,2,3,4,5,6,7,8,9]" ng-show="num %3 == 0">{{ num }}</li>
+		</ul>
+		<ul>
+			<li ng-repeat="num in [0,1,2,3,4,5,6,7,8,9]" ng-hide="num %3 != 0">{{ num }}</li>
+		</ul>
+
+		<ul>
+			<ol ng-repeat="letter in ['a','b','c','d','e','f']">{{ (letter|uppercase) + letter}}</ol>
+		</ul>
+
+		<img ng-repeat="calf in ['calf1', 'calf2', 'calf4']"ng-src="/img/{{ calf }}.jpeg" alt="Calf">
+
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script type="text/javascript" src="/templateTest.js"></script>
+	</body>
+
+</html>
+
